@@ -1,4 +1,37 @@
-<p>
-  timetable works!
-  <app-dashboard></app-dashboard>
-</p>
+<div id="timetableContainer" fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign.xs="space-evenly" fxLayoutAlign="start">
+  
+  <div fxFlex="0 1 auto" fxFlexAlign="space-evenly">
+    <h3>First Term Timetable</h3>
+  </div>
+
+  <mat-form-field fxFlex="1 1 auto" fxFlexAlign="center" fxFlexFill>
+    <mat-select (selectionChange)="filterByDay($event)" placeholder="Filter by Day">
+      <mat-option value="">Show All</mat-option>
+      <mat-option value="Monday">Monday</mat-option>
+      <mat-option value="Tuesday">Tuesday</mat-option>
+      <mat-option value="Wednesday">Wednesday</mat-option>
+      <mat-option value="Thursday">Thursday</mat-option>
+      <mat-option value="Friday">Friday</mat-option>
+      <mat-option value="Saturday">Saturday</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-card class="class-card" *ngFor="let class of classesToDisplay" fxFlex.xs="1 1 auto" fxFlex.sm="1 1 calc(50%-30px)"
+    fxFlex="2 1 200px">
+    <mat-card-header>
+      <mat-card-title>
+        <h4>{{class.style}}</h4>
+      </mat-card-title>
+      <mat-card-subtitle>{{class.level}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{class.day}}</p>
+      <p>{{class.time}}</p>
+      <p>{{class.venue}}</p>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+  </mat-card>
+</div>
