@@ -16,7 +16,13 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-card class="class-card" *ngFor="let class of classesToDisplay" fxFlex.xs="1 1 auto" fxFlex.sm="1 1 calc(50%-30px)"
+  <!-- <form class="example-form" fxFlex="1 1 auto" fxFlexAlign="center" fxFlexFill>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite food" (keyup)="onKeySearch($event)" (ngValue)="searchBy" placeholder="Search by Style">
+    </mat-form-field>
+  </form> -->
+
+  <mat-card class="class-card golden" *ngFor="let class of classesToDisplay | searchByStyle:searchBy" fxFlex.xs="1 1 auto" fxFlex.sm="1 1 calc(50%-30px)"
     fxFlex="2 1 200px">
     <mat-card-header>
       <mat-card-title>

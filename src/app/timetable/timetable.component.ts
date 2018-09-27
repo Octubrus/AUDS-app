@@ -11,6 +11,7 @@ export class TimetableComponent implements OnInit {
   classes: any;
   filteredClasses = [];
   classesToDisplay: any;
+  searchBy: string = '';
 
   constructor(private classDataService: ClassDataService) { }
 
@@ -59,6 +60,11 @@ export class TimetableComponent implements OnInit {
       }
     }
     this.classesToDisplay = this.filteredClasses;
+  }
+
+  onKeySearch(input) {
+    this.searchBy = input.target.value;
+    console.log(input.target.value);
   }
   
 

@@ -1,6 +1,11 @@
 #heroBackground {
-  height: 100%;
+  height: 100vh;
   background-image: url("/assets/images/hero.jpg");
   background-size: cover;
   text-align: center;
+}
+
+#container {
+  height: 90%;
+  color: #fafafa;
 }

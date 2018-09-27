@@ -7,12 +7,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatSelectModule, MatExpansionModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ClassesTableComponent } from './classes-table/classes-table.component';
+import { MatInputModule, MatSelectModule, MatExpansionModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { FaqComponent } from './faq/faq.component';
+import { SearchByStylePipe } from './timetable/search-by-style.pipe';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,11 +25,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    DashboardComponent,
-    ClassesTableComponent,
     HomeComponent,
     TimetableComponent,
-    FaqComponent
+    FaqComponent,
+    SearchByStylePipe
   ],
   imports: [
     BrowserModule,
@@ -50,6 +48,7 @@ const routes: Routes = [
     MatSortModule,
     MatExpansionModule,
     MatSelectModule,
+    MatInputModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
