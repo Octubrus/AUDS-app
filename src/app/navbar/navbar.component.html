@@ -1,7 +1,9 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center center">
+      <img fxFlex fxFlexFill src="../assets/logo.svg" alt="AUDS logo">
+    </mat-toolbar>
     <mat-nav-list fxLayout="column" fxLayoutAlign="end">
       <a mat-list-item routerLink="/home">Home</a>
       <a mat-list-item routerLink="/timetable">Timetable</a>
@@ -25,7 +27,8 @@
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span class="golden-text">Aberdeen University Dance Society</span>
+      <span fxHide fxShow.gt-xs="true" class="golden-text">Aberdeen University Dance Society</span>
+      <span fxHide fxShow.xs="true" class="golden-text">AUDS</span>
     </mat-toolbar>
 
     <router-outlet></router-outlet>
