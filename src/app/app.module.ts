@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { FaqComponent } from './faq/faq.component';
 import { SearchByStylePipe } from './timetable/search-by-style.pipe';
+import { FilterByDayPipe } from './timetable/filter-by-day.pipe';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
     HomeComponent,
     TimetableComponent,
     FaqComponent,
-    SearchByStylePipe
+    SearchByStylePipe,
+    FilterByDayPipe
   ],
   imports: [
     BrowserModule,

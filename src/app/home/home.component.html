@@ -4,9 +4,14 @@
     <h1 class="mat-display-1 golden-text">Aberdeen University Dance Society</h1>
     <h2 class="mat-headline">One Membership - All Classes</h2>
     <h3 class="mat-subheading-2">{{classes.length}} Classes this Week</h3>
-    <a mat-stroked-button href="https://www.ausa.org.uk/societies/society/dance/" target="_blank" class="mat-accent">
-      Join
-    </a>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <a fxFlex="1 1 140px" mat-stroked-button routerLink="/timetable" class="mat-accent">
+        See Timetable
+      </a>
+      <a fxFlex="1 1 140px" mat-stroked-button href="https://www.ausa.org.uk/societies/society/dance/" target="_blank" class="mat-accent">
+        Join
+      </a>
+    </div>
   </div>
 
 </section>

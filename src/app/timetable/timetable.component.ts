@@ -12,6 +12,7 @@ export class TimetableComponent implements OnInit {
   filteredClasses = [];
   classesToDisplay: any;
   searchBy: string = '';
+  byDay;
 
   constructor(private classDataService: ClassDataService) { }
 
@@ -49,23 +50,11 @@ export class TimetableComponent implements OnInit {
   }
 
   filterByDay(selection) {
-    if (selection.value === "") {
-      this.classesToDisplay = this.classes;
-      return;
-    }
-    this.filteredClasses = [];
-    for (let x = 0; x < this.classes.length; x++) {
-      if (selection.value === this.classes[x].day) {
-        this.filteredClasses = this.filteredClasses.concat(this.classes[x]);
-      }
-    }
-    this.classesToDisplay = this.filteredClasses;
+    this.byDay = selection.value;
   }
 
   onKeySearch(input) {
     this.searchBy = input.target.value;
-    console.log(input.target.value);
   }
-  
 
 }

@@ -1,19 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'searchByStyle'
+  name: 'filterByDay'
 })
-export class SearchByStylePipe implements PipeTransform {
+export class FilterByDayPipe implements PipeTransform {
 
   filteredClasses;
 
-  transform(classes: any, searchValue: string): any {
-    if (!searchValue) {
-      return classes;
+  transform(classes: any, day: string): any {
+    if (!day) {
+      return classes
     } else {
       this.filteredClasses = [];
       for (let i = 0; i < classes.length; i++) {
-        if (classes[i].style.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
+        if (day === classes[i].day) {
           this.filteredClasses = this.filteredClasses.concat(classes[i]);
         }
       }
