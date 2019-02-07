@@ -9,7 +9,7 @@ export class FilterByDayPipe implements PipeTransform {
 
   transform(classes: any, day: string): any {
     if (!day) {
-      return classes
+      return classes;
     } else {
       this.filteredClasses = [];
       for (let i = 0; i < classes.length; i++) {

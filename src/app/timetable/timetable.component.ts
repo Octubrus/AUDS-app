@@ -11,7 +11,7 @@ export class TimetableComponent implements OnInit {
   classes: any;
   filteredClasses = [];
   classesToDisplay: any;
-  searchBy: string = '';
+  searchBy = '';
   byDay;
 
   constructor(private classDataService: ClassDataService) { }
